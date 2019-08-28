@@ -3,7 +3,7 @@ let connection;
 
 // makes sure you're able to exit with ctrl+c once in the game
 const handleUserInput = function(key) {
-  if (key === '\u0003') {
+    if (key === '\u0003') {
     process.exit();
   }
   if (key === 'w') {
@@ -17,6 +17,12 @@ const handleUserInput = function(key) {
   }
   if (key === 's') {
     connection.write('Move: down');
+  }
+  if (key === 'f') {
+    connection.write('Say: hey');
+  }
+  if (key === 'r') {
+    connection.write('Say: ouch');
   }
 };
   // setup User Interface to handle input through stdin
