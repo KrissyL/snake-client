@@ -4,8 +4,13 @@ const net = require('net');
 const connect = function() {
   const conn = net.createConnection({
     host: '192.168.88.151',
-    port: 50541
+    port: 50541,
   });
+  // notifies you once a connection is established
+  conn.on('connect', () => {
+    console.log('You are now connected to the game server');
+    conn.write('Name: N3R');
+  }),
   //   handles incoming data and console logs it
   conn.on('data', (data) => {
     console.log('Server says: ', data);
